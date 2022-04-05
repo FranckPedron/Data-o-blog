@@ -1,0 +1,3 @@
+POST: id, category, slug, title, excerpt, content, created_at, updated_at
+CATEGORY: id, route, label, created_at, updated_at
+POST_HAS_CATEGORIES: id, id_post, id_category
