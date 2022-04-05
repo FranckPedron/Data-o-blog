@@ -1,0 +1,34 @@
+{
+  "name": "data-o-blog-franckpedron",
+  "version": "1.0.0",
+  "description": "Il est temps pour vous de mettre en pratique toutes les bonnes pratiques et les outils que l'on a découvert en ce début de Spé API & Data.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node index.js --clear",
+    "debug": "DEBUG= node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/O-clock-Atome/Data-o-blog-FranckPedron.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/O-clock-Atome/Data-o-blog-FranckPedron/issues"
+  },
+  "homepage": "https://github.com/O-clock-Atome/Data-o-blog-FranckPedron#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "joi": "^17.6.0",
+    "pg": "^8.7.3"
+  },
+  "devDependencies": {
+    "debug": "^4.3.4",
+    "dotenv": "^16.0.0"
+  }
+}
