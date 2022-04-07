@@ -2,6 +2,6 @@
 
 BEGIN;
 
-DROP TABLE IF EXISTS post, category,post_has_category;
+DROP TABLE IF EXISTS post, category CASCADE;
 
 COMMIT;

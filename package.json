@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node index.js --clear",
-    "debug": "DEBUG=Datas node index.js"
+    "debug": "DEBUG=App,Datas,ControllerCategory,Wrapper,ControllerPost,DataMapper,Router node index.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   "homepage": "https://github.com/O-clock-Atome/Data-o-blog-FranckPedron#readme",
   "dependencies": {
     "express": "^4.17.3",
+    "express-jsdoc-swagger": "^1.6.7",
     "joi": "^17.6.0",
     "pg": "^8.7.3"
   },

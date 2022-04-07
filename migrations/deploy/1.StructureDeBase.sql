@@ -2,33 +2,24 @@
 
 BEGIN;
 
-    
-    CREATE TABLE IF NOT EXISTS post (
+    CREATE TABLE category (
       id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-      category TEXT NOT NULL,
+      "route" TEXT NOT NULL UNIQUE,
+      label TEXT NOT NULL UNIQUE,
+      created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+      updated_at TIMESTAMPTZ
+    );
+    
+    CREATE TABLE post (
+      id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
       slug TEXT NOT NULL,
-      title TEXT,
-      excerpt TEXT,
+      title TEXT NOT NULL,
+      excerpt TEXT NOT NULL,
       content TEXT NOT NULL,
+      category_id INT REFERENCES category(id),
       created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
       updated_at TIMESTAMPTZ
     ) ;
-    
-    
-    CREATE TABLE IF NOT EXISTS category (
-      id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-      route TEXT NOT NULL,
-      label TEXT NOT NULL,
-      created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
-      updated_at TIMESTAMPTZ
-    );
-
-    
-    CREATE TABLE IF NOT EXISTS post_has_category (
-      id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-      post_id INT REFERENCES post(id),
-      category_id INT REFERENCES category(id)
-    );
     
     
 

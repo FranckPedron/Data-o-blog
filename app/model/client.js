@@ -1,11 +1,12 @@
-require('dotenv').config();
-const { Client } = require('pg');
+const { Pool } = require('pg');
 
-const client = new Client(`postgresql://postgres:${process.env.PGPASSWORD}@${process.env.PGHOST}/${process.env.PGDATABASE}`);
+const client = new Pool({
+    connectionString: process.env.DATABASE_URL,
+    ssl: { //on demande d'accepter le fait qu'on ne soit pas en ssl (sécurité)
+        rejectUnauthorized: false
+    }
+});
 
-client
-    .connect()
-    .then(() => console.log('connected'))
-    .catch(err => console.error('connection error', err.stack));
+client.connect();
 
 module.exports = client;
