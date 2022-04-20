@@ -1,17 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const controllerCategory = require('../controller/controllerCategory');
+const categoryController = require('../controller/categoryController');
 const routerWrapper = require('../helper/routerWrapper');
 const handleError = require('../helper/handleError')
 
 router.route('/')
-    .get(routerWrapper(controllerCategory.getAllCategories))
-    .post(routerWrapper(controllerCategory.createCategory));
+    .get(routerWrapper(categoryController.getAll))
+    .post(routerWrapper(categoryController.create));
 
 router.route('/:id(\\d+)')
-    .get(routerWrapper(controllerCategory.getOneCategory))
-    .patch(routerWrapper(controllerCategory.patchOneCategoryById))
-    .delete(routerWrapper(controllerCategory.deleteOneCategoryById));
+    .get(routerWrapper(categoryController.get))
+    .patch(routerWrapper(categoryController.update))
+    .delete(routerWrapper(categoryController.delete));
 
 router.use(handleError);
 

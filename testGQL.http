@@ -1,0 +1,17 @@
+# route pour récupérer tous les catégories
+
+POST http://localhost:3000/graphql HTTP/1.1
+X-Request-Type: GraphQL
+
+{
+    "request": "categories"
+}
+
+
+POST http://localhost:3000/graphql HTTP/1.1
+X-Request-Type: GraphQL
+
+{
+    "request": "category",
+    "id": 2
+}

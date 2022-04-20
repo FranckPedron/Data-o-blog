@@ -1,20 +1,20 @@
 const express = require('express');
 const router = express.Router();
-const controllerPost = require('../controller/controllerPost');
+const postController = require('../controller/postController');
 const routerWrapper = require('../helper/routerWrapper');
 const handleError = require('../helper/handleError')
 
 router.route('/')
-    .get(routerWrapper(controllerPost.getAllPosts))
-    .post(routerWrapper(controllerPost.addPost));
+    .get(routerWrapper(postController.getAll))
+    .post(routerWrapper(postController.create));
 
 router.route('/:id(\\d+)')
-    .get(routerWrapper(controllerPost.getOnePost))
-    .patch(routerWrapper(controllerPost.patchPostById))
-    .delete(routerWrapper(controllerPost.deleteOnePostById));
+    .get(routerWrapper(postController.get))
+    .patch(routerWrapper(postController.update))
+    .delete(routerWrapper(postController.delete));
 
 router.route('/category/:id(\\d+)')
-    .get(routerWrapper(controllerPost.getPostByCategory));
+    .get(routerWrapper(postController.getByCategory));
 
 router.use(handleError);
 
