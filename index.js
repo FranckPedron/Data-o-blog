@@ -5,7 +5,7 @@ const app = express();
 const router = require('./app/router');
 const debug = require('debug')('App');
 
-app.use(router);
+app.use("/api",router);
 
 
 app.listen(PORT, () => {
